@@ -1,6 +1,6 @@
 'use client';
 import { sampleData } from '@/data/sampleData';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'; // Install recharts: npm install recharts
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts'; // Install recharts: npm install recharts
 
 const ComparisonPage = () => {
   const { location, biodiversityScore, carbonCredit } = sampleData;
@@ -48,7 +48,13 @@ const ComparisonPage = () => {
             <XAxis dataKey="name" />
             <YAxis label={{ value: 'Price (USD)', angle: -90, position: 'insideLeft' }} />
             <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
-            <Bar dataKey="value" fill={(data) => data.color} />
+            <Bar dataKey="value">
+              {
+                priceData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))
+              }
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </div>
