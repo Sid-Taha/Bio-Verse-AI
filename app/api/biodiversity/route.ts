@@ -1,3 +1,4 @@
+// app\api\biodiversity\route.ts
 import { NextResponse } from 'next/server';
 import axios from 'axios';
 
