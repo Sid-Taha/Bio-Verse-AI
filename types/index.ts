@@ -1,3 +1,4 @@
+// types\index.ts
 export interface SampleData {
   location: {
     name: string;
