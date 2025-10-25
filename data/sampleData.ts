@@ -1,8 +1,9 @@
+// data\sampleData.ts
 import { SampleData } from '../types'; // Define this type for better safety
 
 export const sampleData: SampleData = {
   location: {
-    name: "Amazon Rainforest, Brazil (Mock Data)",
+    name: "Amazon Rainforest, Brazil (Demo Data)",
     coordinates: { lat: -3.4653, lng: -62.2159 },
     country: "BR"
   },
